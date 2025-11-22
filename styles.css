@@ -725,11 +725,6 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-image .profile-photo:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
 /* Fallback styling for when image is loading or missing */
 .about-image .image-placeholder {
     width: 100%;
@@ -1043,7 +1038,7 @@ main {
     right: 0;
     width: 100px;
     height: 100px;
-    background: rgba(var(--accent-primary-rgb), 0.1);
+    background: rgba(var(--Accent-primary-rgb), 0.1);
     border-radius: 50%;
     transform: translate(30px, -30px);
 }
@@ -1524,8 +1519,6 @@ main {
 }
 
 
-
-
 /* Accordion Styles for Hobbies */
 .hobbies-accordion {
     padding: 60px 0;
@@ -1856,7 +1849,6 @@ main {
     font-weight: 500;
     transition: background-color 0.3s ease;
 }
-
 
 /* Back to Top Section */
 .back-to-top-section {
@@ -2303,7 +2295,7 @@ main {
 }
 
 .hobby-image {
-    height: 300px;
+    height: 250px;
     width: auto;
     border-radius: 12px;
     transition: all 0.3s ease;
@@ -2329,6 +2321,105 @@ main {
     border-radius: 8px;
     border: 1px solid var(--border-color);
     box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.media-content {
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.video-content {
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Gaming Images Display (Always Visible) */
+.gaming-images-display {
+    margin: 2rem 0;
+}
+
+.gaming-images-display .hobby-images {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+.image-group-with-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.first-three-images {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.shared-caption {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-light);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.clickable-image {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.clickable-image:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.clickable-image.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    height: auto;
+    max-height: 90vh;
+    max-width: 90vw;
+    width: auto;
+    z-index: 10000;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    cursor: zoom-out;
+}
+
+.clickable-image:not(.expanded) {
+    cursor: zoom-in;
+}
+
+/* Backdrop for expanded images */
+.image-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Media Toggle Styles */
@@ -2363,11 +2454,6 @@ main {
 
 .media-toggle-btn:hover .fa-images {
     color: var(--bg-primary);
-}
-
-.media-content {
-    margin-top: 1rem;
-    transition: all 0.3s ease;
 }
 
 /* Video Section Styles */
@@ -2412,11 +2498,6 @@ main {
 .toggle-arrow {
     transition: transform 0.3s ease;
     margin-left: auto;
-}
-
-.video-content {
-    margin-top: 1rem;
-    transition: all 0.3s ease;
 }
 
 .video-grid {
@@ -2507,31 +2588,38 @@ main {
         align-items: center;
     }
     
+    .gaming-images-display .hobby-images {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    .image-group-with-caption {
+        width: 100%;
+    }
+    
+    .first-three-images {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
     .hobby-image {
         width: 100%;
         max-width: 250px;
     }
     
-    .media-toggle-btn {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
+    .gaming-images-display .hobby-image {
+        height: 180px;
+        max-width: none;
+        width: auto;
     }
     
-    .video-grid {
-        grid-template-columns: 1fr;
+    .shared-caption {
+        font-size: 0.85rem;
+        padding: 0.65rem 1.25rem;
+        margin-top: 0.75rem;
     }
     
-    .video-toggle-btn {
-        padding: 0.875rem 1.25rem;
-        font-size: 0.95rem;
+    .clickable-image.expanded {
+        max-width: 95vw;
+        max-height: 85vh;
     }
-    
-    .view-more-btn {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.9rem;
-    }
-    
-    .video-actions {
-        margin-top: 1rem;
-    }
-}

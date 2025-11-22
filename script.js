@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
+    
     // Project Filter Functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
@@ -333,8 +333,19 @@ function toggleMedia(mediaId) {
 function toggleVideos(videoId) {
     const videoContent = document.getElementById(videoId);
     const toggleBtn = document.querySelector(`button[onclick="toggleVideos('${videoId}')"]`);
+    
+    if (!videoContent || !toggleBtn) {
+        console.error('Video content or toggle button not found');
+        return;
+    }
+    
     const arrow = toggleBtn.querySelector('.toggle-arrow');
     const span = toggleBtn.querySelector('span');
+    
+    if (!arrow || !span) {
+        console.error('Arrow or span not found in toggle button');
+        return;
+    }
     
     // Determine section type and set button text
     const isGamingSection = videoId === 'gaming-videos';
@@ -357,6 +368,8 @@ function toggleVideos(videoId) {
         // Add smooth reveal animation
         videoContent.style.opacity = '0';
         videoContent.style.transform = 'translateY(-10px)';
+        videoContent.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        
         setTimeout(() => {
             videoContent.style.opacity = '1';
             videoContent.style.transform = 'translateY(0)';
@@ -397,6 +410,12 @@ function toggleAccordion(accordionId) {
         accordionContent.classList.add('active');
     }
 }
+
+// Toggle image size for gaming images
+// REMOVED - This function is no longer used
+
+// Toggle single image expansion (click to expand/collapse)
+// REMOVED - This function is no longer used
 
 // Progressive video loading functionality
 const videoSectionState = {
