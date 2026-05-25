@@ -25,10 +25,10 @@
                     </a>
                     <div class="dropdown-menu">
                         <a href="javascript:void(0)" onclick="switchView('pdf')" class="dropdown-link">Full Resume (PDF)</a>
-                        <a href="#summary" class="dropdown-link">Professional Summary</a>
-                        <a href="#education" class="dropdown-link">Education</a>
-                        <a href="#skills" class="dropdown-link">Skills & Technologies</a>
-                        <a href="#experience" class="dropdown-link">Experience</a>
+                        <a href="about.html#summary" class="dropdown-link">Professional Summary</a>
+                        <a href="about.html#education" class="dropdown-link">Education</a>
+                        <a href="about.html#skills" class="dropdown-link">Skills & Technologies</a>
+                        <a href="about.html#experience" class="dropdown-link">Experience</a>
                     </div>
                 </div>
                 
@@ -66,11 +66,11 @@
             <div class="container">
                 <div class="page-header-content">
                     <div class="view-toggle">
-                        <button id="webViewBtn" class="toggle-btn" onclick="switchView('web')">
+                        <button id="webViewBtn" class="toggle-btn active" onclick="switchView('web')">
                             <i class="fas fa-user"></i>
                             Web View
                         </button>
-                        <button id="pdfViewBtn" class="toggle-btn active" onclick="switchView('pdf')">
+                        <button id="pdfViewBtn" class="toggle-btn" onclick="switchView('pdf')">
                             <i class="fas fa-file-pdf"></i>
                             PDF View
                         </button>
@@ -90,7 +90,7 @@
         </section>
 
         <!-- Web View Content -->
-        <div id="webView" class="view-content" style="display: none;">
+        <div id="webView" class="view-content">
             <section class="resume-summary" id="summary">
                 <div class="container">
                     <div class="resume-highlights">
@@ -254,7 +254,7 @@
         </div>
 
         <!-- PDF View Content -->
-        <div id="pdfView" class="view-content">
+        <div id="pdfView" class="view-content" style="display: none;">
             <section class="resume-content">
                 <div class="container">
                     <div class="pdf-viewer-container">                    
@@ -302,6 +302,7 @@
                 pdfView.style.display = 'block';
                 webViewBtn.classList.remove('active');
                 pdfViewBtn.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
@@ -314,7 +315,42 @@
                     alert('Your browser may not support PDF viewing. Please use the download button to view the resume.');
                 };
             }
+
+            // If URL has a hash (e.g. #summary, #education), switch to web view and scroll to section
+            if (window.location.hash) {
+                scrollToSection(window.location.hash);
+            }
+
+            // Also handle same-page hash link clicks (e.g. when already on about.html in PDF view)
+            document.querySelectorAll('.dropdown-link[href^="about.html#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const hash = '#' + this.getAttribute('href').split('#')[1];
+                    history.pushState(null, '', hash);
+                    scrollToSection(hash);
+                });
+            });
         });
+
+        function scrollToSection(hash) {
+            switchView('web');
+            const target = document.querySelector(hash);
+            if (target) {
+                setTimeout(() => {
+                    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+                    const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 16;
+                    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+                }, 100);
+            }
+        }
+
+        // Handle browser back/forward with hash
+        window.addEventListener('hashchange', function() {
+            if (window.location.hash) {
+                scrollToSection(window.location.hash);
+            }
+        });
+
     </script>
 </body>
 </html>
