@@ -17,7 +17,7 @@
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                
+
                 <div class="nav-item">
                     <a href="about.html" class="nav-link active">
                         Resume
@@ -31,9 +31,9 @@
                         <a href="about.html#education" class="dropdown-link">Education</a>
                     </div>
                 </div>
-                
+
                 <a href="projects.html" class="nav-link">Projects</a>
-                
+
                 <div class="nav-item">
                     <a href="hobbies.html" class="nav-link">
                         Hobbies
@@ -45,7 +45,7 @@
                         <a href="hobbies.html#music" class="dropdown-link">Music</a>
                     </div>
                 </div>
-                
+
                 <div class="social-links">
                     <a href="https://github.com/D0529Li" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/david-li-yuchen/" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -91,7 +91,7 @@
 
         <!-- Web View Content -->
         <div id="webView" class="view-content">
-            <section class="resume-summary" id="summary">
+            <!--<section class="resume-summary" id="summary">
                 <div class="container">
                     <div class="resume-highlights">
                         <h2>Professional Summary</h2>
@@ -100,77 +100,85 @@
                         </p>
                     </div>
                 </div>
-            </section>
+            </section>-->
 
-        <section class="experience" id="experience">
-            <div class="container">
-                <h2>Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">Oct 2023 – Present</div>
-                        <div class="timeline-content">
-                            <h3>Software Developer</h3>
-                            <h4>Advantive LLC (formerly PINpoint Information Systems Inc.)</h4>
-                            <h5>Toronto, ON, Canada</h5>
-                            <div class="experience-achievements">
-                                <ul>
-                                    <li><strong>Led the technical migration</strong> of core services to .NET 10 and refactored multiple legacy integration projects into SDK-style .NET 8 architectures; authored YAML CI/CD pipelines to modernize and automate legacy build processes.</li>
-                                    <li><strong>Designed and engineered a Windows background service</strong> utilizing robust file-lock retry logic and custom error recovery; automated the ingestion, validation, and parsing of structured drop-folder files to seamlessly process hundreds of automated manufacturing work orders daily through internal REST APIs.</li>
-                                    <li><strong>Resolved critical security vulnerabilities</strong> and architectural gaps within federated login flows, including JWT service account token refresh failures and cross-operator session isolation bugs; aligned the system with modern identity best practices by deprecating a legacy token validator and upgrading core OIDC dependencies.</li>
-                                    <li><strong>Optimized data access performance</strong> by migrating a legacy data layer to Entity Framework Core and designed new REST API endpoints to synchronize real-time production step-states and quality data for third-party integrations.</li>
-                                    <li><strong>Identified and eliminated query performance bottlenecks</strong> across stored procedures and web service layers, significantly reducing latency and improving UI responsiveness in high-volume, data-heavy production deployments.</li>
-                                    <li><strong>Shipped core operator-facing features</strong> for a .NET Core Manufacturing Execution System (MES) app — including custom defect filters, default reason auto-selection, and in-app video support — while resolving 20+ critical regression and stability defects to improve shop-floor reliability.</li>
-                                    <li><strong>Served as Scrum Master</strong>, successfully onboarding a development team with no prior Agile experience to Scrum methodologies; improved sprint predictability from below 50% to 80–90% while facilitating Agile ceremonies and mentoring junior developers.</li>
-                                </ul>
+            <section class="experience" id="experience">
+                <div class="container">
+                    <h2>Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Oct 2023 – Present</div>
+                            <div class="timeline-content">
+                                <h3>Software Developer</h3>
+                                <h4>Advantive LLC - formerly PINpoint Information Systems Inc.</h4>
+                                <h5>Toronto, ON, Canada</h5>
+                                <div class="experience-achievements">
+                                    <ul>
+                                        <li>Led the migration of legacy applications and services to <strong>.NET 10</strong> and SDK-style <strong>.NET 8</strong> architectures; authored <strong>YAML CI/CD pipelines</strong> and modernized a legacy reporting application to eliminate long-standing technical debt.</li>
+
+                                        <li>Designed and built a fault-tolerant <strong>Windows background service</strong> that validates and processes third-party files before submitting work orders through internal <strong>REST APIs</strong>, with file-lock retries and automated error recovery.</li>
+
+                                        <li>Improved a critical data-processing workflow by approximately <strong>80–90% in the desktop application</strong> and <strong>60–70% in the web application</strong> by profiling a complex multi-component call path and eliminating previously unidentified performance bottlenecks.</li>
+
+                                        <li>Diagnosed and fixed a release-blocking <strong>Entity Framework Core runtime failure</strong> caused by compiler-generated LINQ behavior; identified affected queries across the codebase and delivered coordinated fixes across active release branches.</li>
+
+                                        <li>Remediated critical security vulnerabilities and architectural gaps in federated authentication flows, including <strong>JWT token-refresh failures</strong> and <strong>cross-user session-isolation defects</strong>; deprecated a legacy token validator and upgraded core <strong>OIDC</strong> dependencies.</li>
+
+                                        <li>Took end-to-end ownership of a centralized repository of customer-specific <strong>.NET plugin assemblies</strong>, standardizing dependency updates, testing, and release recompilation to improve maintenance reliability and support turnaround.</li>
+
+                                        <li>Resolved multiple critical post-upgrade production incidents involving <strong>cross-application and multithreaded behavior</strong>, delivering safe patches within <strong>one business day</strong> to reduce customer downtime and rollback risk.</li>
+
+                                        <li>Served as <strong>Scrum Master</strong> alongside full-time development responsibilities, maintaining <strong>1.5–2 sprints of refined backlog</strong>, improving urgent-work visibility, facilitating Agile ceremonies, and mentoring junior developers.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Sep 2022 – Apr 2023</div>
-                        <div class="timeline-content">
-                            <h3>Software Developer (Co-op)</h3>
-                            <h4>PINpoint Information Systems Inc.</h4>
-                            <h5>Burlington, ON, Canada</h5>
-                            <div class="experience-achievements">
-                                <ul>
-                                    <li><strong>Built a multi-threaded database replay tool</strong> that improved testing throughput by 10X, significantly reducing QA bottlenecks and strengthening core system scalability.</li>
-                                </ul>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Sep 2022 – Apr 2023</div>
+                            <div class="timeline-content">
+                                <h3>Software Developer (Co-op)</h3>
+                                <h4>PINpoint Information Systems Inc.</h4>
+                                <h5>Burlington, ON, Canada</h5>
+                                <div class="experience-achievements">
+                                    <ul>
+                                        <li><strong>Built a multi-threaded database replay tool</strong> that improved testing throughput by 10X, significantly reducing QA bottlenecks and strengthening core system scalability.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">May 2021 – Aug 2021</div>
-                        <div class="timeline-content">
-                            <h3>Software Developer (Co-op)</h3>
-                            <h4>Digital 14</h4>
-                            <h5>Mississauga, ON, Canada</h5>
-                            <div class="experience-achievements">
-                                <ul>
-                                    <li><strong>Developed secure Java-based backend services</strong> for communication platforms while supporting enterprise-grade code reviews and CI/CD security adoption.</li>
-                                </ul>
+                        <div class="timeline-item">
+                            <div class="timeline-date">May 2021 – Aug 2021</div>
+                            <div class="timeline-content">
+                                <h3>Software Developer (Co-op)</h3>
+                                <h4>Digital 14</h4>
+                                <h5>Mississauga, ON, Canada</h5>
+                                <div class="experience-achievements">
+                                    <ul>
+                                        <li><strong>Developed secure Java-based backend services</strong> for communication platforms while supporting enterprise-grade code reviews and CI/CD security adoption.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Jan 2020 – Apr 2020</div>
-                        <div class="timeline-content">
-                            <h3>Software Developer (Co-op)</h3>
-                            <h4>JSI Telecom</h4>
-                            <h5>Kanata, ON, Canada</h5>
-                            <div class="experience-achievements">
-                                <ul>
-                                    <li><strong>Contributed to the UI/UX development</strong> of core product modules, collaborating within an Agile team to deliver iterative enhancements for enterprise clients.</li>
-                                </ul>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2020 – Apr 2020</div>
+                            <div class="timeline-content">
+                                <h3>Software Developer (Co-op)</h3>
+                                <h4>JSI Telecom</h4>
+                                <h5>Kanata, ON, Canada</h5>
+                                <div class="experience-achievements">
+                                    <ul>
+                                        <li><strong>Contributed to the UI/UX development</strong> of core product modules, collaborating within an Agile team to deliver iterative enhancements for enterprise clients.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
             <section class="resume-summary" id="skills">
                 <div class="container">
-                    <div class="skills" >
+                    <div class="skills">
                         <h2>Skills & Technologies</h2>
                         <div class="skills-grid">
                             <div class="skill-category">
@@ -181,22 +189,20 @@
                                     <span class="skill-tag expert">JavaScript</span>
                                     <span class="skill-tag expert">TypeScript</span>
                                     <span class="skill-tag proficient">Java</span>
-                                    <span class="skill-tag proficient">C++</span>
-                                    <span class="skill-tag proficient">C</span>
                                 </div>
                             </div>
                             <div class="skill-category">
                                 <h4>Frameworks</h4>
                                 <div class="skill-tags">
                                     <span class="skill-tag expert">.NET 8/10</span>
-                                    <span class="skill-tag expert">ASP.NET Core Web API</span>
+                                    <span class="skill-tag expert">ASP.NET Core</span>
                                     <span class="skill-tag expert">Entity Framework Core</span>
                                     <span class="skill-tag expert">WPF</span>
                                     <span class="skill-tag proficient">Angular</span>
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h4>Database</h4>
+                                <h4>Data</h4>
                                 <div class="skill-tags">
                                     <span class="skill-tag expert">SQL Server</span>
                                     <span class="skill-tag expert">Stored Procedures</span>
@@ -220,10 +226,12 @@
                                 <div class="skill-tags">
                                     <span class="skill-tag expert">REST APIs</span>
                                     <span class="skill-tag expert">MVVM</span>
+                                    <span class="skill-tag expert">Multithreading</span>
                                     <span class="skill-tag proficient">OAuth 2.0</span>
-                                    <span class="skill-tag proficient">Microservices</span>
+                                    <span class="skill-tag proficient">OpenID Connect</span>
+                                    <span class="skill-tag proficient">JWT</span>
                                     <span class="skill-tag proficient">CI/CD</span>
-                                    <span class="skill-tag proficient">Distributed Systems</span>
+                                    <span class="skill-tag proficient">Performance Profiling</span>
                                 </div>
                             </div>
                         </div>
@@ -264,15 +272,14 @@
         <div id="pdfView" class="view-content" style="display: none;">
             <section class="resume-content">
                 <div class="container">
-                    <div class="pdf-viewer-container">                    
-                        <iframe 
-                            id="resume-pdf-viewer"
-                            src="media/documents/Resume - Yuchen (David) Li.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                            type="application/pdf"
-                            width="100%" 
-                            height="1350px"
-                            style="border: 1px solid #333; border-radius: 8px; background: #1a1a1a;"
-                            title="Resume PDF Viewer">
+                    <div class="pdf-viewer-container">
+                        <iframe id="resume-pdf-viewer"
+                                src="media/documents/Resume - Yuchen (David) Li.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                                type="application/pdf"
+                                width="100%"
+                                height="1350px"
+                                style="border: 1px solid #333; border-radius: 8px; background: #1a1a1a;"
+                                title="Resume PDF Viewer">
                             <p>Your browser does not support PDF viewing. <a href="media/documents/Resume - Yuchen (David) Li.pdf" download>Download the PDF</a> instead.</p>
                         </iframe>
                     </div>
@@ -314,11 +321,11 @@
         }
 
         // PDF viewer error handling
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const pdfViewer = document.getElementById('resume-pdf-viewer');
-            
+
             if (pdfViewer) {
-                pdfViewer.onerror = function() {
+                pdfViewer.onerror = function () {
                     alert('Your browser may not support PDF viewing. Please use the download button to view the resume.');
                 };
             }
@@ -330,7 +337,7 @@
 
             // Also handle same-page hash link clicks (e.g. when already on about.html in PDF view)
             document.querySelectorAll('.dropdown-link[href^="about.html#"]').forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const hash = '#' + this.getAttribute('href').split('#')[1];
                     history.pushState(null, '', hash);
@@ -352,7 +359,7 @@
         }
 
         // Handle browser back/forward with hash
-        window.addEventListener('hashchange', function() {
+        window.addEventListener('hashchange', function () {
             if (window.location.hash) {
                 scrollToSection(window.location.hash);
             }

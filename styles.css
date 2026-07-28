@@ -1006,6 +1006,7 @@ main {
 /* Education Section Styles */
 .education-section {
     margin: 3rem 0;
+    padding: 2rem 0;
 }
 
 .education-section h2 {
@@ -1273,7 +1274,7 @@ main {
 }
 
 .timeline {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
